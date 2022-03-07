@@ -4,7 +4,12 @@ const express = require('express')
 const weatherRoutes = require('./routes/weatherApi')
 const cors = require('cors')
 const app = express()
-app.use(cors())
+
+var corsOptions = {
+    origin: process.env.ORIGIN || '**',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
 app.use((req,res,next)=>{
     console.log("call url : "+req.url)
     next()
