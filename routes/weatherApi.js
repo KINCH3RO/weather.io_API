@@ -6,7 +6,7 @@ let API_KEY = process.env.WEATHER_API_KEY;
 
 module.exports = (app) => {
 
-    app.get('/currentWeatherByName', (req, res) => {
+    app.get('/api/currentWeatherByName', (req, res) => {
         let cityName = req.query.cityName;
         if (!cityName) {
             res.status(400).send("Bad request")
@@ -22,7 +22,7 @@ module.exports = (app) => {
 
     })
 
-    app.get('/currentWeatherByLoc', (req, res) => {
+    app.get('/api/currentWeatherByLoc', (req, res) => {
         let long = req.query.long;
         let lat = req.query.lat;
         if (!long || !lat) {
@@ -42,7 +42,7 @@ module.exports = (app) => {
 
 
 
-    app.get('/oneCallWeatherByLoc', (req, res) => {
+    app.get('/api/oneCallWeatherByLoc', (req, res) => {
 
 
         let units = req.query.units || "metric"
@@ -86,7 +86,7 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/oneCallWeatherByName', (req, res) => {
+    app.get('/api/oneCallWeatherByName', (req, res) => {
         // if(test=="true"){
         //     console.log("TEST API MODE");
         //   let json=  fs.readFileSync(process.cwd()+"\\response.json",{encoding:'utf8'})
@@ -134,7 +134,7 @@ module.exports = (app) => {
     })
 
 
-    app.get('/getAirPollutionByLoc', (req, res) => {
+    app.get('/api/getAirPollutionByLoc', (req, res) => {
         let long = req.query.long;
         let lat = req.query.lat;
         if (!long || !lat) {
@@ -150,7 +150,7 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/getAirPolltionByName', (req, res) => {
+    app.get('/api/getAirPolltionByName', (req, res) => {
         let cityName = req.query.cityName;
 
         if (!cityName) {
@@ -173,7 +173,7 @@ module.exports = (app) => {
         })
     })
 
-    app.get('/getLocationByName', (req, res) => {
+    app.get('/api/getLocationByName', (req, res) => {
         let cityName = req.query.cityName;
         let full = req.query.full
 

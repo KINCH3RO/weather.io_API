@@ -1,14 +1,19 @@
 require('dotenv').config()
 
 const express = require('express')
+const weatherRoutes = require('./routes/weatherApi')
 const cors = require('cors')
 const app = express()
 app.use(cors())
 app.use((req,res,next)=>{
-    console.log("call")
+    console.log("call url : "+req.url)
     next()
 })
-const weatherRoutes = require('./routes/weatherApi')
+
+
+app.get('/api',(req,res)=>{
+    res.send('Api running')
+})
 
 weatherRoutes(app)
 
