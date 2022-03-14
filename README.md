@@ -4,7 +4,7 @@ This project is a backend API for [Weather.io](https://github.com/kinchero1/weat
 
 ## Requirement
 
-OpenWeatherMap API key you get one from [here](https://openweathermap.org/api)
+OpenWeatherMap API key you can get one from [here](https://openweathermap.org/api)
 
 ## Setup
 
