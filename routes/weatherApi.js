@@ -40,6 +40,7 @@ module.exports = (app) => {
 
     app.get('/api/getCountries/:country',(req,res)=>{
         if(!req.params.country){
+            res.json([])
             return
         }
         axios.get('https://restcountries.com/v2/alpha/'+req.params.country).then(response=>{
