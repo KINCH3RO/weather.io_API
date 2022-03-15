@@ -38,6 +38,16 @@ module.exports = (app) => {
         })
     })
 
+    app.get('/api/getCountries/:country',(req,res)=>{
+        if(!req.params.country){
+            return
+        }
+        axios.get('https://restcountries.com/v2/alpha/'+req.params.country).then(response=>{
+            res.json(response.data)
+        }).catch(err=>{
+            res.json([])
+        })
+    })
 
 
 
