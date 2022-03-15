@@ -43,7 +43,7 @@ module.exports = (app) => {
             res.json([])
             return
         }
-        axios.get('https://restcountries.com/v2/alpha/'+req.params.country).then(response=>{
+        axios.get(`http://geodb-free-service.wirefreethought.com/v1/geo/cities?namePrefix=${req.params.country}&hateoasMode=false&limit=5&offset=0`).then(response=>{
             res.json(response.data)
         }).catch(err=>{
             res.json([])
